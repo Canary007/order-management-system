@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { ConfirmationDialogComponent } from 'src/app/dialogs/confirmation-dialog/confirmation-dialog.component';
 import { OrderAddEditComponent } from 'src/app/dialogs/order-add-edit/order-add-edit.component';
 
@@ -26,7 +27,8 @@ export class OrderListComponent implements OnInit {
   displayedColumns: string[] = ['order_no', 'due_date', 'customer_name', 'customer_address', 'customer_phone', 'order_total', 'action'];
 
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -71,6 +73,10 @@ export class OrderListComponent implements OnInit {
           this.tableData = this.tableData.filter((row: any) => row !== element);
         }
       });
+  }
+
+  logout() {
+    this.router.navigate(['/login']);
   }
 
 }
