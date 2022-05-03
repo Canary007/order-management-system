@@ -1,0 +1,67 @@
+<div class="container-fluid">
+
+    <div class="row d-flex flex-row justify-content-center align-items-center mt-5">
+        <div class="col-md-10 col-sm-12 col-xs-12 d-flex justify-content-between">
+            <div class="mat-typography">
+                <h2 class="mat-title">Order List</h2>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" (click)="openAddOrderDialog()">New Order</button>
+            </div>
+        </div>
+
+        <div class="col-md-10 d-flex">
+            <table mat-table [dataSource]="tableData" class="mat-elevation-z2">
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="order_no">
+                    <th mat-header-cell *matHeaderCellDef> Order No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.order_no}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="due_date">
+                    <th mat-header-cell *matHeaderCellDef> Due Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.due_date}} </td>
+                </ng-container>
+
+                <!-- Weight Column -->
+                <ng-container matColumnDef="customer_name">
+                    <th mat-header-cell *matHeaderCellDef> Customer Buyer Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.customer_name}} </td>
+                </ng-container>
+
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="customer_address">
+                    <th mat-header-cell *matHeaderCellDef> Customer Address </th>
+                    <td mat-cell *matCellDef="let element"> {{element.customer_address}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="customer_phone">
+                    <th mat-header-cell *matHeaderCellDef> Customer Phone No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.customer_phone}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="order_total">
+                    <th mat-header-cell *matHeaderCellDef> Order Total </th>
+                    <td mat-cell *matCellDef="let element"> {{element.order_total}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="action" class="text-center">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-icon-button color="warn" class="mr-2" (click)="openEditOrderDialog(element)">
+                            <mat-icon>edit</mat-icon>
+                        </button>
+                        <button mat-icon-button color="accent" (click)="deleteOrder(element)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</div>
