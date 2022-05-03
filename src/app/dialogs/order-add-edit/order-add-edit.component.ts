@@ -24,8 +24,8 @@ export class OrderAddEditComponent implements OnInit {
   buildAddEditForm() {
     this.addEditOrderForm = this.fb.group({
       order_no: ['', [Validators.required]],
-      due_date: [new Date(''), [Validators.required]],
-      buyer_name: ['', [Validators.required]],
+      due_date: ['', [Validators.required]],
+      customer_name: ['', [Validators.required]],
       customer_address: ['', [Validators.required]],
       customer_phone: ['', [Validators.required]],
       order_total: ['', [Validators.required]]
@@ -37,8 +37,8 @@ export class OrderAddEditComponent implements OnInit {
       const selectedRow = this.data?.element;
       this.addEditOrderForm.patchValue({
         order_no: selectedRow.order_no,
-        due_date: new Date(selectedRow.due_date),
-        buyer_name: selectedRow.customer_name,
+        due_date: selectedRow.due_date,
+        customer_name: selectedRow.customer_name,
         customer_address: selectedRow.customer_address,
         customer_phone: selectedRow.customer_phone,
         order_total: selectedRow.order_total

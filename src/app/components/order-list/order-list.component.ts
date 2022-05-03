@@ -56,7 +56,14 @@ export class OrderListComponent implements OnInit {
         title: 'Edit',
         element
       }
-    });
+    }).afterClosed()
+      .subscribe(res => {
+        if (res?.formValue) {
+          let index = this.tableData.indexOf(element);
+          this.tableData[index] = res?.formValue;
+          this.tableData = [...this.tableData];
+        }
+      });;
   }
 
   deleteOrder(element: any) {

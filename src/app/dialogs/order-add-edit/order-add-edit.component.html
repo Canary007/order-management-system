@@ -10,13 +10,13 @@
                 <mat-label class="font-weight-500">Order No. <span class="text-danger">*</span>
                 </mat-label>
                 <mat-form-field appearance="outline" class="w-100">
-                    <input matInput placeholder="Enter order number" formControlName="order_no" required>
+                    <input matInput placeholder="Enter order number" formControlName="order_no">
                 </mat-form-field>
 
                 <mat-label class="font-weight-500">Order Due Date <span class="text-danger">*</span>
                 </mat-label>
                 <mat-form-field appearance="outline" class="w-100">
-                    <input matInput [matDatepicker]="picker" placeholder="Pick a date" readonly required>
+                    <input matInput [matDatepicker]="picker" placeholder="Pick a date" readonly>
                     <mat-hint>MM/DD/YYYY</mat-hint>
                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                     <mat-datepicker #picker></mat-datepicker>
@@ -25,25 +25,25 @@
                 <mat-label class="font-weight-500">Customer Buyer Name <span class="text-danger">*</span>
                 </mat-label>
                 <mat-form-field appearance="outline" class="w-100">
-                    <input matInput placeholder="Enter customer buyer name" formControlName="buyer_name" required>
+                    <input matInput placeholder="Enter customer buyer name" formControlName="customer_name">
                 </mat-form-field>
 
                 <mat-label class="font-weight-500">Customer Address <span class="text-danger">*</span>
                 </mat-label>
                 <mat-form-field appearance="outline" class="w-100">
-                    <input matInput placeholder="Enter customer address" formControlName="customer_address" required>
+                    <input matInput placeholder="Enter customer address" formControlName="customer_address">
                 </mat-form-field>
 
                 <mat-label class="font-weight-500">Customer Phone No. <span class="text-danger">*</span>
                 </mat-label>
                 <mat-form-field appearance="outline" class="w-100">
-                    <input matInput placeholder="Enter customer phone number" formControlName="customer_phone" required>
+                    <input matInput placeholder="Enter customer phone number" formControlName="customer_phone">
                 </mat-form-field>
 
                 <mat-label class="font-weight-500">Order Total <span class="text-danger">*</span>
                 </mat-label>
                 <mat-form-field appearance="outline" class="w-100">
-                    <input matInput placeholder="Enter order total" formControlName="order_total" required>
+                    <input matInput placeholder="Enter order total" formControlName="order_total">
                 </mat-form-field>
             </div>
         </form>
